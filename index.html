@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>Clase 5 🐱</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <p>
+                <a href="index.html" class="activo">Hola</a>
+                <a href="page-1.html">Selecciona</a>
+                <a href="page-2.html">Foto</a>
+            </p>
+            <h1></h1>
+            <h2></h2>
+            <p id="aqui"></p>
+            <p id="alla" class="escondido"></p>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            var texto = {
+                saludo: ["¡Hola michis!", "¡Hola miau!", "¡Hola :3!"],
+                nombre: "Mi nombre es Alicia Silva",
+                motivo: "Tomé este curso porque quisiera adquirir conocimientos, manejo e instruirme en la creación y programación de un sitio web. Además de poder crear a futuro un portafolio digital, con el objetivo de presentar mis proyectos realizados hasta este momento, para las postulaciones de trabajo. Como videos, animaciones, ilustraciones, reseñas, entre otros. Estoy preparada para volver a intentarlo de nuevo, probando de lo que he aprendido con esta primera evaluación. <span>Ver más</span>.",
+                etc: "Ya revisé mi primera nota y la verdad es que se me olvidó subir en el foro del canvas la clase 2. Sólo subí en github, pero no en el foro. Y por eso, no volverá a suceder otra vez. Pero a parte de eso, estoy conforme con los demás.",
+            };
+            var aleatorio = Math.floor(Math.random() * texto.saludo.length);
+
+            console.log(aleatorio);
+            $("h1").html(texto.saludo[aleatorio]);
+            $("h2").html(texto.nombre);
+            $("#aqui").html(texto.motivo);
+            $("#alla").html(texto.etc);
+            function revelador() {
+                $("#alla").toggleClass("escondido");
+            }
+            $("span").hover(revelador);
+        </script>
+    </body>
+</html>
